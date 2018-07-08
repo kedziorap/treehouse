@@ -1,0 +1,27 @@
+{
+    "name": "my_templates",
+    "version": "1.0.0",
+    "description": "Templates to Front-End projects",
+    "main": "index.js",
+    "scripts": {
+        "init-project": "npm run init:install && npm run init:dirs && npm run init:files && npm run init:files-content",
+        "init:dirs": "mkdirp css sass js lib img",
+        "init:files": "touch README.md sass/style.scss js/script.js",
+        "init:files-content": "curl https://raw.githubusercontent.com/kedziorap/templates/master/html/index.html -o index.html && curl https://raw.githubusercontent.com/kedziorap/templates/master/.gitignore -o .gitignore",
+        "init:install": "npm install",
+        "test": "npm run test:html && npm run test:js",
+        "test:js": "globstar jshint js/*.js",
+        "test:html": "globstar nu-html-checker *.html",
+        "sass": "node-sass --output-style expanded --source-map true -o css sass --watch pass"
+    },
+    "keywords": [],
+    "author": "Piotr Kędziora",
+    "license": "ISC",
+    "devDependencies": {
+        "globstar": "^1.0.0",
+        "jshint": "^2.9.5",
+        "mkdirp": "^0.5.1",
+        "node-sass": "^4.7.2",
+        "nu-html-checker": "^0.1.0"
+    }
+}
