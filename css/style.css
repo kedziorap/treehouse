@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box; }
 
+.defs-only {
+  display: none; }
+
 body {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif; }
@@ -14,7 +17,17 @@ img {
   display: flex; }
 
 .big-wrapper {
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
+
+.view-details {
+  text-decoration: none;
+  color: #7cc576;
+  transition: 0.2s;
+  font-weight: 600; }
+  .view-details:hover {
+    color: green;
+    text-shadow: 0 0 2px black; }
 
 .container {
   max-width: 1200px;
@@ -57,6 +70,8 @@ img {
     height: 45px !important; }
   .min-height .menu-list {
     top: 45px; }
+    .min-height .menu-list a {
+      font-size: 0.9em !important; }
 
 .row {
   display: flex;
@@ -142,7 +157,8 @@ img {
     max-width: 520px; }
 
 .services {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 50px; }
   .services h4 {
     text-transform: uppercase; }
   .services .picture-wrapper img {
@@ -195,6 +211,74 @@ img {
         font-size: 40px;
         margin-right: 10px; }
 
+.latest-project {
+  position: relative; }
+  .latest-project h4 {
+    text-transform: uppercase; }
+  .latest-project .icons-list {
+    display: flex;
+    align-items: center;
+    padding: 10px 0; }
+    .latest-project .icons-list .icon-wrapper {
+      min-width: 80px;
+      margin-right: 15px; }
+    .latest-project .icons-list .text-section h5 {
+      margin: 0; }
+    .latest-project .icons-list .text-section p {
+      margin: 0;
+      color: #777777; }
+  .latest-project .icon-wrapper img {
+    transition: 0.2s;
+    cursor: pointer; }
+    .latest-project .icon-wrapper img:hover {
+      transform: scale(1.15);
+      filter: url(#monochrome);
+      -webkit-filter: url(#monochrome); }
+
+.big-photo-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 51%;
+  right: 0;
+  transform: translate(0, -30%); }
+
+.culture {
+  overflow: hidden;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding-bottom: 30px; }
+  .culture .images-wrapper-center {
+    position: relative; }
+    .culture .images-wrapper-center::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 3px;
+      top: 50%;
+      width: 60%;
+      left: 74%;
+      background: #777777; }
+    .culture .images-wrapper-center::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      height: 3px;
+      width: 60%;
+      left: -35%;
+      background: #777777; }
+  .culture .box {
+    margin-bottom: 20px; }
+    .culture .box h4 {
+      text-transform: uppercase; }
+    .culture .box img {
+      cursor: pointer;
+      transition: 0.2s; }
+      .culture .box img:hover {
+        filter: drop-shadow(0 0 10px #7cc576);
+        transform: scale(1.1); }
+
 #hamburger {
   padding: 8px 12px 6px;
   border: 1px solid black;
@@ -206,6 +290,53 @@ img {
     background-color: black;
     color: white; }
 
+@media (max-width: 960px) {
+  .col-md-1 {
+    flex: 8.333%; }
+
+  .col-md-2 {
+    flex: 16.667%; }
+
+  .col-md-3 {
+    flex: 25%; }
+
+  .col-md-4 {
+    flex: 33.333%; }
+
+  .col-md-5 {
+    flex: 41.667%; }
+
+  .col-md-6 {
+    flex: 50%; }
+
+  .col-md-7 {
+    flex: 58.333%; }
+
+  .col-md-8 {
+    flex: 66.667%; }
+
+  .col-md-9 {
+    flex: 75%; }
+
+  .col-md-10 {
+    flex: 83.333%; }
+
+  .col-md-11 {
+    flex: 91.667%; }
+
+  .col-md-12 {
+    flex: 100%; }
+
+  .big-photo-wrapper {
+    order: 0;
+    text-align: center; }
+    .big-photo-wrapper img {
+      position: static;
+      transform: none;
+      width: 100%; }
+
+  .md-order-1 {
+    order: 1; } }
 @media (max-width: 768px) {
   .col-sm-1 {
     flex: 8.333%; }
@@ -284,12 +415,18 @@ img {
   .settings .photo-settings {
     display: none; }
 
+  .settings .content {
+    padding: 30px 10px; }
+
   .content h2, .content {
     text-align: center !important; }
     .content h2 p, .content p {
       margin: 0 auto; }
     .content h2 .my-list li, .content .my-list li {
-      justify-content: center; } }
+      justify-content: center; }
+
+  .images-wrapper-center::after, .images-wrapper-center::before {
+    display: none !important; } }
 @media (max-width: 600px) {
   .col-sx-1 {
     flex: 8.333%; }
