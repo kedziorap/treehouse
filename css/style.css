@@ -67,7 +67,7 @@ img {
   z-index: 100;
   box-shadow: 0 0 5px black; }
   .min-height .container {
-    height: 45px !important; }
+    height: 50px !important; }
   .min-height .menu-list {
     top: 45px; }
     .min-height .menu-list a {
@@ -279,6 +279,54 @@ img {
         filter: drop-shadow(0 0 10px #7cc576);
         transform: scale(1.1); }
 
+.clients .person-place {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .clients .person-place .person {
+    border-radius: 50%;
+    box-shadow: 0 0 10px black; }
+.clients .citation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  .clients .citation-wrapper .quote {
+    font-size: 20px; }
+    .clients .citation-wrapper .quote::after, .clients .citation-wrapper .quote::before {
+      content: '"'; }
+  .clients .citation-wrapper .author {
+    color: #7cc576; }
+
+.citation {
+  background-color: #eaeaea;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative; }
+  .citation::before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background-color: #eaeaea;
+    left: -15px;
+    top: 50%;
+    z-index: -1;
+    transform: rotate(45deg) translate(-20%, -50%); }
+
+.after:before {
+  display: none; }
+.after:after {
+  content: "";
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background-color: #eaeaea;
+  right: -2px;
+  top: 50%;
+  z-index: -1;
+  transform: rotate(45deg) translate(-20%, -50%); }
+
 #hamburger {
   padding: 8px 12px 6px;
   border: 1px solid black;
@@ -338,6 +386,12 @@ img {
   .md-order-1 {
     order: 1; } }
 @media (max-width: 768px) {
+  .order-sm-1 {
+    order: 1; }
+
+  .order-sm-0 {
+    order: 0; }
+
   .col-sm-1 {
     flex: 8.333%; }
 
@@ -426,7 +480,20 @@ img {
       justify-content: center; }
 
   .images-wrapper-center::after, .images-wrapper-center::before {
-    display: none !important; } }
+    display: none !important; }
+
+  .person {
+    max-width: 200px; }
+
+  .citation::before {
+    top: 0;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%, 0); }
+
+  .after::after {
+    top: 0;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%, 0); } }
 @media (max-width: 600px) {
   .col-sx-1 {
     flex: 8.333%; }
