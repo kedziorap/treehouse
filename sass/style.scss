@@ -363,6 +363,69 @@ img {
         transform: rotate(45deg) translate(-20%, -50%)
     }
 }
+section.green {
+    overflow: hidden;
+    background: $color-button;
+    text-align: center;
+    h2 {
+        margin-top: 50px;
+        color: white;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        font-weight: 600;
+        margin-bottom: 60px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-transform: uppercase;
+        transition: 0.2s;
+        &:hover {
+            background: white;
+            color: $color-button;
+        }
+    }
+}
+.companies {
+    padding: 40px 0;
+    img {
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+.down-section {
+    background-color: #222222;
+    color: white;
+    padding-bottom: 30px;
+    p {
+        font-size: 14px;
+    }
+}
+.media-icon {
+    display: inline-block;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #222222;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s all;
+    .fab {
+        transform: translate(0, 10px);
+        }
+    &:hover {
+        background-color: white;
+        color: #222222;
+        box-shadow: 0 0 1px black;
+    }
+}
 #hamburger {
     padding: 8px 12px 6px;
     border: 1px solid black;
@@ -403,6 +466,12 @@ img {
     
 }
 @media (max-width: 768px) {
+    .sm-none {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
     .order-sm-1 {
         order:1;
     }
